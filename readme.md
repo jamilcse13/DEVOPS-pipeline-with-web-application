@@ -20,6 +20,8 @@
 - Solution: We can fix it manualy by changing [project/lib/flask_ngrok.py line 29 os.chmod(executable, 777) into os.chmod(executable, 755)
 
 ## Setting CI/CD using Github Actions
+
+## here we use different versions of pythons
 - go to github repository->Actions->python-package
 - then setup the python-package.yml file
     ```
@@ -52,5 +54,42 @@
             if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         - name: Test with pytest
         run: |
-            pytest
+            pytest test.py
+    ```
+
+## here we use different versions of OS
+- go to github repository->Actions->python-package
+- then setup the python-package.yml file
+    ```
+    # This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+    # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+    name: Python package
+
+    on:
+    push:
+        branches: [ master ]
+
+    jobs:
+    build:
+
+        strategy:
+        matrix:
+            platform: [ubuntu-latest, macos-latest, windows-latest]
+            python-version: [3.7, 3.8, 3.9]
+        runs-on: ${{ matrix.platform }}
+
+        steps:
+        - uses: actions/checkout@v2
+        - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+            python-version: ${{ matrix.python-version }}
+        - name: Install dependencies
+        run: |
+            python -m pip install --upgrade pip
+            then pip install -r requirements.txt
+        - name: Test with pytest
+        run: |
+            pytest test.py
     ```
