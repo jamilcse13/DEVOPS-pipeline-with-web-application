@@ -1,0 +1,3 @@
+- Setup virtual environment inside project
+- listed required installation packages inside requirements.txt file and run:
+    - pip install -r requirements.txt
