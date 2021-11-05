@@ -21,7 +21,7 @@
 
 ## Setting CI/CD using Github Actions
 
-## here we use different versions of pythons
+### here we use different versions of pythons
 - go to github repository->Actions->python-package
 - then setup the python-package.yml file
     ```
@@ -93,3 +93,12 @@
         run: |
             pytest test.py
     ```
+
+# Docker
+- It is a container software
+- It is designed to make deployment easier and run applications anywhere using containers
+- It is opensource, reusable
+- Alternative of docker: rkt, podman, container
+## Docker Image and Container:
+- Docker image packs up the application and environment required by the application to run
+- Containers are runnable instance of an image
