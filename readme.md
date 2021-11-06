@@ -102,3 +102,20 @@
 ## Docker Image and Container:
 - Docker image packs up the application and environment required by the application to run
 - Containers are runnable instance of an image
+
+# Kubernetes
+- to manage multiple docker container
+
+## Minikube
+- sets up a local Kubernetes cluster
+- Minikube is an open source tool that allows you to set up a single-node Kubernetes cluster on your local machine.
+- The cluster is run inside a virtual machine and includes Docker, allowing you to run containers inside the node.
+- This is an excellent way to test in a Kubernetes environment locally, without using up too much resources.
+- installation process:
+    - https://www.linuxtechi.com/how-to-install-minikube-on-ubuntu/
+    - https://phoenixnap.com/kb/install-minikube-on-ubuntu
+- pod:
+    - we can wrap up our container/containers within pod
+    - pods can communicate with each other
+    - a pod is executed with all its elements
+    - it better to use small number of container inside a pod
