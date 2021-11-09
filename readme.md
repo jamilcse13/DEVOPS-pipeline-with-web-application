@@ -119,3 +119,7 @@
     - pods can communicate with each other
     - a pod is executed with all its elements
     - it better to use small number of container inside a pod
+
+# Selenium
+- it is a python framework which is used to test web application
+- 
